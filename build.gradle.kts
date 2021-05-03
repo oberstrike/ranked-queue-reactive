@@ -15,18 +15,16 @@ val quarkusPlatformArtifactId: String by project
 val quarkusPlatformVersion: String by project
 
 dependencies {
-    implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
-    implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
-    implementation("io.quarkus:quarkus-mutiny")
-    implementation("io.quarkus:quarkus-kotlin")
+    implementation("io.quarkus:quarkus-hibernate-reactive-panache")//
 
-    implementation("io.quarkus:quarkus-hibernate-reactive-panache")
-    implementation("io.quarkus:quarkus-keycloak-authorization")
+    implementation("io.quarkus:quarkus-hibernate-reactive")
+    implementation("io.quarkus:quarkus-reactive-pg-client")
     implementation("io.quarkus:quarkus-resteasy-reactive")
-    implementation("io.quarkus:quarkus-oidc")
-    implementation("io.quarkus:quarkus-jdbc-postgresql")
+    implementation("io.quarkus:quarkus-resteasy-reactive-jackson")//
+
+    implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
+    implementation("io.quarkus:quarkus-kotlin")
     implementation("io.quarkus:quarkus-arc")
-    implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin")
 
     testImplementation("io.quarkus:quarkus-test-security")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")

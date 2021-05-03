@@ -13,6 +13,6 @@ class ReactiveGreetingResourceTest {
             .`when`()["/hello-resteasy-reactive"]
             .then()
             .statusCode(200)
-            .body(CoreMatchers.`is`("Hello RESTEasy Reactive"))
+            .body(CoreMatchers.`is`("[]"))
     }
 }
